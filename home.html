@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html ng-app ="ContactApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/fontawesome-all.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="angular/angular.js"></script>
+    <title>Main Page</title>
+    <link rel="icon" href="img/icon.png">
+</head>
+<body ng-controller="ContactAppCtrl">
+<div class="container-fluid">
+   <div class="row" ng-controller ="ContactAppCtrl">
+              <div class="col-xl-1 col-lg-1 d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                    <div class="sidebar">
+                        <a href="#"><i class="fas fa-align-left mb-1"></i></a><hr>
+                        <a href="#"><i class="fab fa-whatsapp" class="green"></i></a>
+                        <a href="#"><i class="far fa-envelope" class="red"></i></a>
+                        <a href="#"><i class="fab fa-skype" class="blue"></i></a>
+                        <a href="#"><i class="fab fa-slack" class="yellow"></i></a>
+                        <a href="#"><i class="fa fa-plus" class="black"></i></a>
+                    </div>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-5 col-sm-12 d-xl-block d-lg-block d-md-block d-sm-block">
+                    <div class="sidebar-inbox">
+                        <a><h3 class="mt-4">Inbox
+                            <i class=" pl-1 fas fa-user-plus"></i></h3><hr>
+                            <h6>All <span class="msg">89</span></h6>
+                            <h6>Message <span class="msg">11</span></h6>
+                            <h6 class="text-white">Unread<span class="msg">4</span></h6>
+                            <h6>Importent <span class="msg">1</span></h6><hr>
+                            <h6>Teams <span class="msg">2</span></h6>
+                            <h6>Groups <span class="msg">4</span></h6>
+                            <h6>Channels <span class="msg">2</span></h6>
+                            <h6 class="mr-5">Locations</h6>
+                            <h6>Media <span class="msg">88</span></h6><hr>
+                            <h6 class="mr-5">Help</h6>
+                            <h6 class="mr-5">Settings</h6>
+                        </a> 
+                    </div>
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-7 col-sm-12 d-xl-block d-lg-block d-md-block d-sm-block">
+                    <div class="sidebar-profile">
+                           <a class="d-block"><i class="fas fa-search"></i>
+                            <input type="text" class="form-control text-white" placeholder="Search" ng-model="search.name">
+                           </a>
+                           <table class="table-hover">
+                                <tr ng-repeat="contact in contactList | filter:search.name" ng-click="selectAContact($index)">
+                                        <td>
+                                           <img ng-src="{{contact.img}}"class="img-fluid img-thumbnail rounded-circle w-50 mb-2" > 
+                                        </td>
+                                        <td>{{contact.name}}</td>
+                                        <td>{{contact.gender}}</td>
+                                        <td><i class="fas fa-ellipsis-h"></i></td>
+                                    </tr>
+                           </table>
+                    </div>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 d-xl-block d-lg-block d-md-block d-sm-block">
+                  <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="chat">
+                                    {{selectedPerson.name}} <span class="text-muted size"> is typeing</span>
+                            </h6>
+                        </div>
+                        <div class="col">
+                            <i class="far fa-star border p-3"></i>
+                            <i class="fas fa-phone border p-3"></i>
+                            <i class="fas fa-video border p-3"></i> 
+                        </div>
+                    </div>  
+                   </div>
+                  <div class="card-body">
+                        <div class="container">
+                            <img src="img/profile-image-1.jpeg" alt="Avatar" style="width:100%;">
+                            <p>Hello. How are you today?</p>
+                            <span class="time-right">11:00</span>
+                        </div>
+                              
+                        <div class="container darker">
+                              <img src="img/profile-image-2.jpg" alt="Avatar" class="right" style="width:100%;">
+                               <p>Hey! I'm fine. Thanks for asking!</p>
+                               <span class="time-left">11:01</span>
+                        </div>
+                              
+                        <div class="container">
+                            <img src="img/profile-image-1.jpeg" alt="Avatar" style="width:100%;">
+                            <p>Sweet! So, what do you wanna do today?</p>
+                            <span class="time-right">11:02</span>
+                            </div>
+                              
+                        <div class="container darker">
+                            <img src="img/profile-image-2.jpg" alt="Avatar" style="width:100%;">
+                            <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+                            <span class="time-left">11:05</span>
+                        </div>
+                        <div class="card">
+                            <img class="card-body card-img-top" src="img/profile-cover-6.jpg" alt="Card image cap">
+                            <span class="time-left">11:05</span>
+                        </div>
+                    </div>
+                  <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="p-3 text-muted"> <i class="fas fa-lock p-2"></i>Type your Message</p>
+                        </div>
+                        <div class="col align-item-center">
+                            <i class="far fa-smile border p-3"></i>
+                            <i class="fab fa-telegram-plane fa-3x ml-5"></i>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 d-xl-block d-lg-block d-md-block d-sm-block">
+                    <div class="card bg-danger">
+                        <div class="card-header">
+                             <div class="row">
+                                <div class="col">
+                                    <i class="far fa-bell p-3 border"></i> 
+                                </div>
+                                <div class="col"> 
+                                    {{selectedPerson.name}}
+                                </div>
+                                <div class="col">
+                                    <i class="far fa-heart p-3 border"></i>
+                                </div>
+                         </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <img ng-src="{{selectedPerson.img}}" class="img-fluid img-thumbnail rounded-circle w-50 mb-2">
+                                <div class="card card-body mt-2">
+                                    <h3>{{selectedPerson.name}}</h3>
+                                </div>
+                                <div class="card card-body mt-2">
+                                    <p>{{selectedPerson.DOB}}</p>
+                                </div>
+                                <div class="card card-body mt-2">
+                                    <p>{{selectedPerson.gender}}</p>
+                                </div>
+                                <div class="card card-body mt-2">
+                                    <p>{{selectedPerson.TelNo}}</p>
+                                </div>
+                                <div class="card card-body mt-2">
+                                    <p>{{selectedPerson.nick}}</p>
+                                </div>
+                                <div class="card card-body mt-2">
+                                     <p>{{selectedPerson.language}}</p>
+                                </div>
+                            </div>
+                        </div>
+              </div>
+        </div>
+    </div>
+    <!--Body Ends-->    
+<script src="bootstrap/js/jquery-3.2.1.min.js"></script>
+<script src="bootstrap/js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/mdb.min.js"></script>
+<script src="js/home.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

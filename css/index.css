@@ -1,0 +1,15 @@
+#form{
+    position:relative;
+    top:250px;
+    left:150px;
+    width:50%;
+}
+body {
+    
+    background: linear-gradient(to top , green 100%, white 0) no-repeat;
+  }
+
+#email,#password{
+    border:1px solid lightgray;
+   
+}  

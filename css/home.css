@@ -1,0 +1,147 @@
+/* side bar */
+.sidebar {
+    height: 100%;
+    width:200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:darkslategray;
+    overflow-x: hidden;
+    padding-top:10px;
+    text-align:center;
+  }
+  
+  .sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 50px;
+    color: #818181;
+    display: block;
+  }
+  .fa-whatsapp{
+    background-color:green; 
+    color:white; 
+  }
+  .fa-envelope{
+    background-color:whitesmoke; 
+    color:red;  
+  }
+  .fa-skype{
+    background-color:dodgerblue; 
+    color:whitesmoke;
+     
+  }
+  .fa-slack{
+    color:goldenrod;  
+  }
+  hr{
+    background:gray;  
+  }
+  
+  /* side bar 1*/
+.sidebar-inbox {
+    height:100%;
+    width:300px;
+    position:relative;
+    z-index:2; 
+    top: 0;
+    left:33px;
+    background-color:darkslategray;
+    overflow-x: hidden;
+    text-align:center;
+    color:whitesmoke;
+    padding-bottom:240px;
+  }
+  .sidebar-inbox a{
+      padding:43px;
+      font-weight:bolder;
+      display:inline-block;
+  }
+  .sidebar-inbox h6 {
+    padding:10px 0 10px 0;
+    text-decoration: none;
+    font-size:20px;
+    display: block;
+    color:gray;
+  }
+  .msg{
+    float:right;
+    padding-left:50px;
+  }
+   /* side profile*/
+.sidebar-profile {
+    height:100%;
+    width:400px;
+    position:relative;
+    z-index:2; 
+    top: 0;
+    left:30px;
+    background-color:darkslategray;
+    overflow-x: hidden;
+    text-align:center;
+    color:whitesmoke;
+    padding-bottom:240px;
+  }
+  .sidebar-profile a{
+      padding:43px;
+      font-weight:bolder;
+      display:inline-block;
+  }
+ 
+table tr td{
+  font-size:20px;
+  padding:20px;
+}
+.chat {
+  font-weight:bold;
+  font-size:20px;
+  }
+
+  /* chat box*/
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    color:white;
+    background-color:green;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+}
+.fa-telegram-plane {
+  color:skyblue;
+}
